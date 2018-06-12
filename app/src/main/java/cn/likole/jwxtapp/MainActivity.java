@@ -13,6 +13,7 @@ import java.io.IOException;
 
 import static cn.likole.jwxtapp.JwxtTool.jwxt;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText et_courseId;
@@ -30,17 +31,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bindView();
         readData();
-        et_termCode.setText("2017-2018-3-2");
+        et_termCode.setText("2018-2019-1-2");
         watchResult();
     }
 
     private void bindView(){
-        et_courseId=findViewById(R.id.et_courseId);
-        et_courseId2=findViewById(R.id.et_courseId2);
-        et_classId=findViewById(R.id.et_classId);
-        et_classId2=findViewById(R.id.et_classId2);
-        et_termCode=findViewById(R.id.et_termCode);
-        btn_select=findViewById(R.id.btn_select);
+        et_courseId=(EditText) findViewById(R.id.et_courseId);
+        et_courseId2=(EditText) findViewById(R.id.et_courseId2);
+        et_classId=(EditText) findViewById(R.id.et_classId);
+        et_classId2=(EditText) findViewById(R.id.et_classId2);
+        et_termCode=(EditText) findViewById(R.id.et_termCode);
+        btn_select=(Button) findViewById(R.id.btn_select);
         btn_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        tv_info=findViewById(R.id.tv_info);
+        tv_info=(TextView) findViewById(R.id.tv_info);
     }
 
     private void readData() {
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         final String classId2=et_classId2.getText().toString();
         if(courseId2.length()<5){
             //一门课
-            Toast.makeText(MainActivity.this,termCode+"  "+courseId+"  "+classId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,termCode+"  "+courseId+"  "+classId, Toast.LENGTH_LONG).show();
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -143,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             }).start();
         }else{
             //两门课
-            Toast.makeText(MainActivity.this,termCode+"  "+courseId+"  "+classId+"  "+courseId2+"  "+classId2, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,termCode+"  "+courseId+"  "+classId+"  "+courseId2+"  "+classId2, Toast.LENGTH_LONG).show();
             new Thread(new Runnable() {
                 @Override
                 public void run() {

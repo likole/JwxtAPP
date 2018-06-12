@@ -32,9 +32,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void bindView() {
-        et_username = findViewById(R.id.et_username);
-        et_password = findViewById(R.id.et_password);
-        btn_login = findViewById(R.id.btn_login);
+        et_username = (EditText) findViewById(R.id.et_username);
+        et_password =(EditText) findViewById(R.id.et_password);
+        btn_login = (Button) findViewById(R.id.btn_login);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
